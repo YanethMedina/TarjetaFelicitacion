@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trajeta de Felicitacion</title>
+    <link rel="stylesheet" href="CSS/ejs3.css" type="text/css"/>
+    <!--Links de bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+</head>
+<body>
+    <header>
+        <h1><a href="#">¡Javascript!</a></h1>
+    </header>
+    <section class="row conteiner-fluid" id="todo">
+        <aside id="lateral" class="col-sm-3">
+            <h6>seleccione un tema</h6>
+            <select id="temas">
+                <option value="0">Seleccione...</option>
+                <option value="independencia">Dia de la Independencia</option>
+                <option value="programador">Dia del Programador</option>
+                <option value="navidad">Navidad</option>
+            </select>
+            <section id="result" class="res">  
+            <h3 id="titulotar"></h3>
+            <h5 id="subtar"></h5>
+            <h5 id="nomrem"></h5>
+            <img src="Imagenes/mainr.gif" id="resultado" class="foto"/>
+            <h6 id="mensaje"></h6>
+            </section>
+        </aside>  
+        <section id="principal" class="col-sm-9">
+            <article id="independencia" class="contenedor">
+                <h3>Seleccione una imagen</h3>
+                <img src="Imagenes/main.gif" id="independenceday" class="foto"/><br>
+                <img src="Imagenes/Independencia1.jpg" class="galeria" onclick="fotografiasI('Independencia1')"/><br>
+                <img src="Imagenes/Independencia2.jpg" class="galeria" onclick="fotografiasI('Independencia2')"/><br>
+                <img src="Imagenes/Independencia3.jpg" class="galeria" onclick="fotografiasI('Independencia3')"/><br>
+                <img src="Imagenes/Independencia4.jpg" class="galeria" onclick="fotografiasI('Independencia4')"/><br>
+                <img src="Imagenes/Independencia5.jpg" class="galeria" onclick="fotografiasI('Independencia5')"/><br>
+                <br><h6>Coloca el titulo</h6>
+                <input type="text" id="titulosI" placeholder="Introduce el titulo"/>
+                <h6>Agrega un subtitulo</h6>
+                <input type="text" id="subtitulosI" placeholder="Capture el subtitulo"/>
+                <h6>Nombre remitente</h6>
+                <input type="text" id="nombreI" placeholder="Digita el nombre"/>
+                <h6>Escribe un mensaje</h6>
+                <input type="text" id="dedicaI" placeholder="Escribe una dedicatoria"/><br>
+                <input type="button" value="Mostrar" onclick="mostrarI()"/> 
+            </article>
+            <article id="programador" class="contenedor">
+                <h3>Seleccione una imagen</h3>
+                <img src="Imagenes/main.gif" id="programerday" class="foto"/><br>
+                <img src="Imagenes/Programador1.jpg" class="galeria" onclick="fotografiasP('Programador1')"/><br>
+                <img src="Imagenes/programador2.jpg" class="galeria" onclick="fotografiasP('Programador2')"/><br>
+                <img src="Imagenes/Programador3.jpg" class="galeria" onclick="fotografiasP('Programador3')"/><br>
+                <img src="Imagenes/Programador4.jpg" class="galeria" onclick="fotografiasP('Programador4')"/><br>
+                <img src="Imagenes/Programador5.jpg" class="galeria" onclick="fotografiasP('Programador5')"/><br><br>
+                <br><h6>Coloca el titulo</h6>
+                <input type="text" id="titulosP" placeholder="Introduce el titulo"/>
+                <h6>Agrega un subtitulo</h6>
+                <input type="text" id="subtitulosP" placeholder="Capture el subtitulo"/>
+                <h6>Nombre remitente</h6>
+                <input type="text" id="nombreP" placeholder="Digita el nombre"/>
+                <h6>Escribe un mensaje</h6>
+                <input type="text" id="dedicaP" placeholder="Escribe una dedicatoria"/><br>
+                <input type="button" value="Mostrar" onclick="mostrarP()"/> 
+            </article>
+            <article id="navidad" class="contenedor">
+                <h3>Seleccione una imagen</h3>
+                <img src="Imagenes/main.gif" id="christmasday" class="foto"/><br>
+                <img src="Imagenes/Navidad1.jpg" class="galeria" onclick="fotografiasN('Navidad1')"/><br>
+                <img src="Imagenes/Navidad2.jpg" class="galeria" onclick="fotografiasN('Navidad2')"/><br>
+                <img src="Imagenes/Navidad3.jpg" class="galeria" onclick="fotografiasN('Navidad3')"/><br>
+                <img src="Imagenes/Navidad4.jpg" class="galeria" onclick="fotografiasN('Navidad4')"/><br>
+                <img src="Imagenes/Navidad5.jpg" class="galeria" onclick="fotografiasN('Navidad5')"/><br>
+                <br><h6>Coloca el titulo</h6>
+                <input type="text" id="titulosN" placeholder="Introduce el titulo"/>
+                <h6>Agrega un subtitulo</h6>
+                <input type="text" id="subtitulosN" placeholder="Capture el subtitulo"/>
+                <h6>Nombre remitente</h6>
+                <input type="text" id="nombreN" placeholder="Digita el nombre"/>
+                <h6>Escribe un mensaje</h6>
+                <input type="text" id="dedicaN" placeholder="Escribe una dedicatoria"/><br>
+                <input type="button" value="Mostrar" onclick="mostrarN()"/> 
+            </article>
+
+        </section>
+    </section>
+<script src="js/funcionalidad.js"></script>
+<script src="js/sha256.js"></script>
+<footer>
+   <h6>Ideas Creativas </h6>  
+   <h6>Temas técnicos</h6> 
+   <h6>Realizado Por: Yaneth Medina</h6> 
+</footer>
+</body>
+</html>
+
